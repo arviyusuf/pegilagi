@@ -1,0 +1,49 @@
+{
+	"description": "The CodeIgniter framework",
+	"name": "codeigniter/framework",
+	"type": "project",
+	"homepage": "https://codeigniter.com",
+	"license": "MIT",
+	"support": {
+		"forum": "http://forum.codeigniter.com/",
+		"wiki": "https://github.com/bcit-ci/CodeIgniter/wiki",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Sprint 1 1,2,3
+		"irc": "irc://irc.freenode.net/codeigniter",
+		"source": "https://github.com/bcit-ci/CodeIgniter"
+	},
+	"require": {
+		"php": ">=5.2.4"
+<<<<<<< HEAD
+=======
+=======
+		"slack": "https://codeigniterchat.slack.com",
+		"source": "https://github.com/bcit-ci/CodeIgniter"
+	},
+	"require": {
+		"php": ">=5.3.7"
+>>>>>>> sprint1 bikin crud 26/01/2018
+>>>>>>> Sprint 1 1,2,3
+	},
+	"suggest": {
+		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
+	},
+	"require-dev": {
+<<<<<<< HEAD
+		"mikey179/vfsStream": "1.1.*"
+	}
+}
+=======
+<<<<<<< HEAD
+		"mikey179/vfsStream": "1.1.*"
+	}
+}
+=======
+		"mikey179/vfsStream": "1.1.*",
+		"phpunit/phpunit": "4.* || 5.*"
+	}
+}
+>>>>>>> sprint1 bikin crud 26/01/2018
+>>>>>>> Sprint 1 1,2,3
