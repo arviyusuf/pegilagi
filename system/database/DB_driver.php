@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -932,13 +916,6 @@ abstract class CI_DB_driver {
 
 		if ($this->_trans_begin())
 		{
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-			$this->_trans_status = TRUE;
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			$this->_trans_depth++;
 			return TRUE;
 		}
@@ -1067,15 +1044,7 @@ abstract class CI_DB_driver {
 	 */
 	public function is_write_type($sql)
 	{
-<<<<<<< HEAD
 		return (bool) preg_match('/^\s*"?(SET|INSERT|UPDATE|DELETE|REPLACE|CREATE|DROP|TRUNCATE|LOAD|COPY|ALTER|RENAME|GRANT|REVOKE|LOCK|UNLOCK|REINDEX)\s/i', $sql);
-=======
-<<<<<<< HEAD
-		return (bool) preg_match('/^\s*"?(SET|INSERT|UPDATE|DELETE|REPLACE|CREATE|DROP|TRUNCATE|LOAD|COPY|ALTER|RENAME|GRANT|REVOKE|LOCK|UNLOCK|REINDEX)\s/i', $sql);
-=======
-		return (bool) preg_match('/^\s*"?(SET|INSERT|UPDATE|DELETE|REPLACE|CREATE|DROP|TRUNCATE|LOAD|COPY|ALTER|RENAME|GRANT|REVOKE|LOCK|UNLOCK|REINDEX|MERGE)\s/i', $sql);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -1204,30 +1173,14 @@ abstract class CI_DB_driver {
 	// --------------------------------------------------------------------
 
 	/**
-<<<<<<< HEAD
-	 * Platform-dependant string escape
-=======
-<<<<<<< HEAD
-	 * Platform-dependant string escape
-=======
 	 * Platform-dependent string escape
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	 *
 	 * @param	string
 	 * @return	string
 	 */
 	protected function _escape_str($str)
 	{
-<<<<<<< HEAD
-		return str_replace("'", "''", remove_invisible_characters($str));
-=======
-<<<<<<< HEAD
-		return str_replace("'", "''", remove_invisible_characters($str));
-=======
 		return str_replace("'", "''", remove_invisible_characters($str, FALSE));
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -1972,10 +1925,6 @@ abstract class CI_DB_driver {
 					$i++;
 				}
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 				// Verify table prefix and replace if necessary
 				if ($this->swap_pre !== '' && strpos($parts[$i], $this->swap_pre) === 0)
 				{
@@ -1985,24 +1934,6 @@ abstract class CI_DB_driver {
 				elseif (strpos($parts[$i], $this->dbprefix) !== 0)
 				{
 					$parts[$i] = $this->dbprefix.$parts[$i];
-<<<<<<< HEAD
-=======
-=======
-				// dbprefix may've already been applied, with or without the identifier escaped
-				$ec = '(?<ec>'.preg_quote(is_array($this->_escape_char) ? $this->_escape_char[0] : $this->_escape_char).')?';
-				isset($ec[0]) && $ec .= '?'; // Just in case someone has disabled escaping by forcing an empty escape character
-
-				// Verify table prefix and replace if necessary
-				if ($this->swap_pre !== '' && preg_match('#^'.$ec.preg_quote($this->swap_pre).'#', $parts[$i]))
-				{
-					$parts[$i] = preg_replace('#^'.$ec.preg_quote($this->swap_pre).'(\S+?)#', '\\1'.$this->dbprefix.'\\2', $parts[$i]);
-				}
-				// We only add the table prefix if it does not already exist
-				else
-				{
-					preg_match('#^'.$ec.preg_quote($this->dbprefix).'#', $parts[$i]) OR $parts[$i] = $this->dbprefix.$parts[$i];
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 				}
 
 				// Put the parts back together

@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 3.0.0
@@ -67,15 +51,7 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 	/**
 	 * phpRedis instance
 	 *
-<<<<<<< HEAD
 	 * @var	resource
-=======
-<<<<<<< HEAD
-	 * @var	resource
-=======
-	 * @var	Redis
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	 */
 	protected $_redis;
 
@@ -365,19 +341,7 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 				continue;
 			}
 
-<<<<<<< HEAD
 			if ( ! $this->_redis->setex($lock_key, 300, time()))
-=======
-<<<<<<< HEAD
-			if ( ! $this->_redis->setex($lock_key, 300, time()))
-=======
-			$result = ($ttl === -2)
-				? $this->_redis->set($lock_key, time(), array('nx', 'ex' => 300))
-				: $this->_redis->setex($lock_key, 300, time());
-
-			if ( ! $result)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			{
 				log_message('error', 'Session: Error while trying to obtain lock for '.$this->_key_prefix.$session_id);
 				return FALSE;

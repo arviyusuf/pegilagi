@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -139,25 +123,11 @@ class CI_Output {
 	public $parse_exec_vars = TRUE;
 
 	/**
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
-	 * mbstring.func_override flag
-	 *
-	 * @var	bool
-	 */
-	protected static $func_override;
-<<<<<<< HEAD
-=======
-=======
 	 * mbstring.func_overload flag
 	 *
 	 * @var	bool
 	 */
 	protected static $func_overload;
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 
 	/**
 	 * Class constructor
@@ -175,15 +145,7 @@ class CI_Output {
 			&& extension_loaded('zlib')
 		);
 
-<<<<<<< HEAD
-		isset(self::$func_override) OR self::$func_override = (extension_loaded('mbstring') && ini_get('mbstring.func_override'));
-=======
-<<<<<<< HEAD
-		isset(self::$func_override) OR self::$func_override = (extension_loaded('mbstring') && ini_get('mbstring.func_override'));
-=======
 		isset(self::$func_overload) OR self::$func_overload = (extension_loaded('mbstring') && ini_get('mbstring.func_overload'));
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 
 		// Get mime types for later
 		$this->mimes =& get_mimes();
@@ -624,10 +586,6 @@ class CI_Output {
 			return;
 		}
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		if (flock($fp, LOCK_EX))
 		{
 			// If output compression is enabled, compress the cache
@@ -684,64 +642,6 @@ class CI_Output {
 			@unlink($cache_path);
 			log_message('error', 'Unable to write the complete cache content at: '.$cache_path);
 		}
-<<<<<<< HEAD
-=======
-=======
-		if ( ! flock($fp, LOCK_EX))
-		{
-			log_message('error', 'Unable to secure a file lock for file at: '.$cache_path);
-			fclose($fp);
-			return;
-		}
-
-		// If output compression is enabled, compress the cache
-		// itself, so that we don't have to do that each time
-		// we're serving it
-		if ($this->_compress_output === TRUE)
-		{
-			$output = gzencode($output);
-
-			if ($this->get_header('content-type') === NULL)
-			{
-				$this->set_content_type($this->mime_type);
-			}
-		}
-
-		$expire = time() + ($this->cache_expiration * 60);
-
-		// Put together our serialized info.
-		$cache_info = serialize(array(
-			'expire'	=> $expire,
-			'headers'	=> $this->headers
-		));
-
-		$output = $cache_info.'ENDCI--->'.$output;
-
-		for ($written = 0, $length = self::strlen($output); $written < $length; $written += $result)
-		{
-			if (($result = fwrite($fp, self::substr($output, $written))) === FALSE)
-			{
-				break;
-			}
-		}
-
-		flock($fp, LOCK_UN);
-		fclose($fp);
-
-		if ( ! is_int($result))
-		{
-			@unlink($cache_path);
-			log_message('error', 'Unable to write the complete cache content at: '.$cache_path);
-			return;
-		}
-
-		chmod($cache_path, 0640);
-		log_message('debug', 'Cache file written: '.$cache_path);
-
-		// Send HTTP cache-control headers to browser to match file cache settings.
-		$this->set_cache_header($_SERVER['REQUEST_TIME'], $expire);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -808,23 +708,11 @@ class CI_Output {
 			log_message('debug', 'Cache file has expired. File deleted.');
 			return FALSE;
 		}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		else
 		{
 			// Or else send the HTTP cache control headers.
 			$this->set_cache_header($last_modified, $expire);
 		}
-<<<<<<< HEAD
-=======
-=======
-
-		// Send the HTTP cache control headers
-		$this->set_cache_header($last_modified, $expire);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 
 		// Add headers from cache file.
 		foreach ($cache_info['headers'] as $header)
@@ -910,10 +798,6 @@ class CI_Output {
 			$this->set_status_header(304);
 			exit;
 		}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		else
 		{
 			header('Pragma: public');
@@ -921,16 +805,6 @@ class CI_Output {
 			header('Expires: '.gmdate('D, d M Y H:i:s', $expiration).' GMT');
 			header('Last-modified: '.gmdate('D, d M Y H:i:s', $last_modified).' GMT');
 		}
-<<<<<<< HEAD
-=======
-=======
-
-		header('Pragma: public');
-		header('Cache-Control: max-age='.$max_age.', public');
-		header('Expires: '.gmdate('D, d M Y H:i:s', $expiration).' GMT');
-		header('Last-modified: '.gmdate('D, d M Y H:i:s', $last_modified).' GMT');
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -943,15 +817,7 @@ class CI_Output {
 	 */
 	protected static function strlen($str)
 	{
-<<<<<<< HEAD
-		return (self::$func_override)
-=======
-<<<<<<< HEAD
-		return (self::$func_override)
-=======
 		return (self::$func_overload)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			? mb_strlen($str, '8bit')
 			: strlen($str);
 	}
@@ -968,15 +834,7 @@ class CI_Output {
 	 */
 	protected static function substr($str, $start, $length = NULL)
 	{
-<<<<<<< HEAD
-		if (self::$func_override)
-=======
-<<<<<<< HEAD
-		if (self::$func_override)
-=======
 		if (self::$func_overload)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		{
 			// mb_substr($str, $start, null, '8bit') returns an empty
 			// string on PHP 5.3

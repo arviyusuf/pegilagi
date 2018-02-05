@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -179,21 +163,10 @@ class CI_DB_result {
 		{
 			return $this->result_object();
 		}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		else
 		{
 			return $this->custom_result_object($type);
 		}
-<<<<<<< HEAD
-=======
-=======
-
-		return $this->custom_result_object($type);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -363,16 +336,7 @@ class CI_DB_result {
 
 		if ($type === 'object') return $this->row_object($n);
 		elseif ($type === 'array') return $this->row_array($n);
-<<<<<<< HEAD
 		else return $this->custom_row_object($n, $type);
-=======
-<<<<<<< HEAD
-		else return $this->custom_row_object($n, $type);
-=======
-
-		return $this->custom_row_object($n, $type);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------

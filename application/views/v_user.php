@@ -511,13 +511,16 @@
 
     <!-- Main content -->
     
-
+<section class="col-md-5 connectedSortable">
   <center><?php echo anchor('crud/tambah','Tambah Data'); ?></center>
-  <table style="margin:20px auto;" border="1">
+  <div class="box">
+    <div class="">
+  <div class="box-body no-padding">
+  <table class="table table-striped">
     <tr>
-      <th>No</th>
-      <th>Id</th>
-      <th>Username</th>
+      <th style="width: 10px">No</th>
+      <th style="width: 10px">Id</th>
+      <th   >Username</th>
       <th>Password</th>
       <th>Action</th>
     </tr>
@@ -537,6 +540,7 @@
     </tr>
     <?php } ?>
   </table>
+  </div>
 
         
         <!-- /.col -->

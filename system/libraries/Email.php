@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -391,25 +375,11 @@ class CI_Email {
 	);
 
 	/**
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
-	 * mbstring.func_override flag
-	 *
-	 * @var	bool
-	 */
-	protected static $func_override;
-<<<<<<< HEAD
-=======
-=======
 	 * mbstring.func_overload flag
 	 *
 	 * @var	bool
 	 */
 	protected static $func_overload;
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 
 	// --------------------------------------------------------------------
 
@@ -427,15 +397,7 @@ class CI_Email {
 		$this->initialize($config);
 		$this->_safe_mode = ( ! is_php('5.4') && ini_get('safe_mode'));
 
-<<<<<<< HEAD
-		isset(self::$func_override) OR self::$func_override = (extension_loaded('mbstring') && ini_get('mbstring.func_override'));
-=======
-<<<<<<< HEAD
-		isset(self::$func_override) OR self::$func_override = (extension_loaded('mbstring') && ini_get('mbstring.func_override'));
-=======
 		isset(self::$func_overload) OR self::$func_overload = (extension_loaded('mbstring') && ini_get('mbstring.func_overload'));
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 
 		log_message('info', 'Email Class Initialized');
 	}
@@ -951,10 +913,6 @@ class CI_Email {
 	/**
 	 * Get Mail Protocol
 	 *
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 	 * @param	bool
 	 * @return	mixed
 	 */
@@ -967,18 +925,6 @@ class CI_Email {
 		{
 			return $this->protocol;
 		}
-<<<<<<< HEAD
-=======
-=======
-	 * @return	mixed
-	 */
-	protected function _get_protocol()
-	{
-		$this->protocol = strtolower($this->protocol);
-		in_array($this->protocol, $this->_protocols, TRUE) OR $this->protocol = 'mail';
-		return $this->protocol;
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -986,55 +932,25 @@ class CI_Email {
 	/**
 	 * Get Mail Encoding
 	 *
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 	 * @param	bool
 	 * @return	string
 	 */
 	protected function _get_encoding($return = TRUE)
-<<<<<<< HEAD
-=======
-=======
-	 * @return	string
-	 */
-	protected function _get_encoding()
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	{
 		in_array($this->_encoding, $this->_bit_depths) OR $this->_encoding = '8bit';
 
 		foreach ($this->_base_charsets as $charset)
 		{
-<<<<<<< HEAD
 			if (strpos($charset, $this->charset) === 0)
-=======
-<<<<<<< HEAD
-			if (strpos($charset, $this->charset) === 0)
-=======
-			if (strpos($this->charset, $charset) === 0)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			{
 				$this->_encoding = '7bit';
 			}
 		}
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		if ($return === TRUE)
 		{
 			return $this->_encoding;
 		}
-<<<<<<< HEAD
-=======
-=======
-		return $this->_encoding;
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -1054,21 +970,10 @@ class CI_Email {
 		{
 			return 'plain-attach';
 		}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		else
 		{
 			return 'plain';
 		}
-<<<<<<< HEAD
-=======
-=======
-
-		return 'plain';
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -1138,25 +1043,9 @@ class CI_Email {
 	 */
 	public function valid_email($email)
 	{
-<<<<<<< HEAD
 		if (function_exists('idn_to_ascii') && $atpos = strpos($email, '@'))
 		{
 			$email = self::substr($email, 0, ++$atpos).idn_to_ascii(self::substr($email, $atpos));
-=======
-<<<<<<< HEAD
-		if (function_exists('idn_to_ascii') && $atpos = strpos($email, '@'))
-		{
-			$email = self::substr($email, 0, ++$atpos).idn_to_ascii(self::substr($email, $atpos));
-=======
-		if (function_exists('idn_to_ascii') && strpos($email, '@'))
-		{
-			list($account, $domain) = explode('@', $email, 2);
-			$domain = is_php('5.4')
-				? idn_to_ascii($domain, 0, INTL_IDNA_VARIANT_UTS46)
-				: idn_to_ascii($domain);
-			$email = $account.'@'.$domain;
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		}
 
 		return (bool) filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -1940,10 +1829,6 @@ class CI_Email {
 	{
 		$this->_unwrap_specials();
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		$method = '_send_with_'.$this->_get_protocol();
 		if ( ! $this->$method())
 		{
@@ -1952,20 +1837,6 @@ class CI_Email {
 		}
 
 		$this->_set_error_message('lang:email_sent', $this->_get_protocol());
-<<<<<<< HEAD
-=======
-=======
-		$protocol = $this->_get_protocol();
-		$method   = '_send_with_'.$protocol;
-		if ( ! $this->$method())
-		{
-			$this->_set_error_message('lang:email_send_failure_'.($protocol === 'mail' ? 'phpmail' : $protocol));
-			return FALSE;
-		}
-
-		$this->_set_error_message('lang:email_sent', $protocol);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		return TRUE;
 	}
 
@@ -1988,25 +1859,9 @@ class CI_Email {
 	 */
 	protected function _validate_email_for_shell(&$email)
 	{
-<<<<<<< HEAD
 		if (function_exists('idn_to_ascii') && $atpos = strpos($email, '@'))
 		{
 			$email = self::substr($email, 0, ++$atpos).idn_to_ascii(self::substr($email, $atpos));
-=======
-<<<<<<< HEAD
-		if (function_exists('idn_to_ascii') && $atpos = strpos($email, '@'))
-		{
-			$email = self::substr($email, 0, ++$atpos).idn_to_ascii(self::substr($email, $atpos));
-=======
-		if (function_exists('idn_to_ascii') && strpos($email, '@'))
-		{
-			list($account, $domain) = explode('@', $email, 2);
-			$domain = is_php('5.4')
-				? idn_to_ascii($domain, 0, INTL_IDNA_VARIANT_UTS46)
-				: idn_to_ascii($domain);
-			$email = $account.'@'.$domain;
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		}
 
 		return (filter_var($email, FILTER_VALIDATE_EMAIL) === $email && preg_match('#\A[a-z0-9._+-]+@[a-z0-9.-]{1,253}\z#i', $email));
@@ -2412,21 +2267,10 @@ class CI_Email {
 				usleep(250000);
 				continue;
 			}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 			else
 			{
 				$timestamp = 0;
 			}
-<<<<<<< HEAD
-=======
-=======
-
-			$timestamp = 0;
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		}
 
 		if ($result === FALSE)
@@ -2598,15 +2442,7 @@ class CI_Email {
 	 */
 	protected static function strlen($str)
 	{
-<<<<<<< HEAD
-		return (self::$func_override)
-=======
-<<<<<<< HEAD
-		return (self::$func_override)
-=======
 		return (self::$func_overload)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			? mb_strlen($str, '8bit')
 			: strlen($str);
 	}
@@ -2623,15 +2459,7 @@ class CI_Email {
 	 */
 	protected static function substr($str, $start, $length = NULL)
 	{
-<<<<<<< HEAD
-		if (self::$func_override)
-=======
-<<<<<<< HEAD
-		if (self::$func_override)
-=======
 		if (self::$func_overload)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		{
 			// mb_substr($str, $start, null, '8bit') returns an empty
 			// string on PHP 5.3

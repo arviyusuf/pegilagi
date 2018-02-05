@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -254,15 +238,7 @@ class CI_Xmlrpc {
 	public $result;
 
 	/**
-<<<<<<< HEAD
-	 * XML-RPC Reponse
-=======
-<<<<<<< HEAD
-	 * XML-RPC Reponse
-=======
 	 * XML-RPC Response
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	 *
 	 * @var	array
 	 */
@@ -484,15 +460,7 @@ class CI_Xmlrpc {
 			{
 				if (is_array($value[0]) && ($value[1] === 'struct' OR $value[1] === 'array'))
 				{
-<<<<<<< HEAD
-					while (list($k) = each($value[0]))
-=======
-<<<<<<< HEAD
-					while (list($k) = each($value[0]))
-=======
 					foreach (array_keys($value[0]) as $k)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 					{
 						$value[0][$k] = $this->values_parsing($value[0][$k]);
 					}
@@ -963,22 +931,6 @@ class XML_RPC_Response
 
 		if (is_array($array))
 		{
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
-			while (list($key) = each($array))
-			{
-				if (is_array($array[$key]))
-				{
-					$array[$key] = $this->decode($array[$key]);
-				}
-				elseif ($this->xss_clean)
-				{
-					$array[$key] = $CI->security->xss_clean($array[$key]);
-<<<<<<< HEAD
-=======
-=======
 			foreach ($array as $key => &$value)
 			{
 				if (is_array($value))
@@ -988,8 +940,6 @@ class XML_RPC_Response
 				elseif ($this->xss_clean)
 				{
 					$array[$key] = $CI->security->xss_clean($value);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 				}
 			}
 
@@ -1043,24 +993,11 @@ class XML_RPC_Response
 			reset($xmlrpc_val->me['struct']);
 			$arr = array();
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
-			while (list($key,$value) = each($xmlrpc_val->me['struct']))
-			{
-				$arr[$key] = $this->xmlrpc_decoder($value);
-			}
-<<<<<<< HEAD
-=======
-=======
 			foreach ($xmlrpc_val->me['struct'] as $key => &$value)
 			{
 				$arr[$key] = $this->xmlrpc_decoder($value);
 			}
 
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			return $arr;
 		}
 	}
@@ -1626,39 +1563,17 @@ class XML_RPC_Message extends CI_Xmlrpc
 
 		if ( ! empty($array))
 		{
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
-			while (list($key) = each($array))
-			{
-				if (is_array($array[$key]))
-				{
-					$array[$key] = $this->output_parameters($array[$key]);
-<<<<<<< HEAD
-=======
-=======
 			foreach ($array as $key => &$value)
 			{
 				if (is_array($value))
 				{
 					$array[$key] = $this->output_parameters($value);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 				}
 				elseif ($key !== 'bits' && $this->xss_clean)
 				{
 					// 'bits' is for the MetaWeblog API image bits
 					// @todo - this needs to be made more general purpose
-<<<<<<< HEAD
-					$array[$key] = $CI->security->xss_clean($array[$key]);
-=======
-<<<<<<< HEAD
-					$array[$key] = $CI->security->xss_clean($array[$key]);
-=======
 					$array[$key] = $CI->security->xss_clean($value);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 				}
 			}
 
@@ -1718,15 +1633,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 			reset($param->me['struct']);
 			$arr = array();
 
-<<<<<<< HEAD
-			while (list($key,$value) = each($param->me['struct']))
-=======
-<<<<<<< HEAD
-			while (list($key,$value) = each($param->me['struct']))
-=======
 			foreach ($param->me['struct'] as $key => &$value)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			{
 				$arr[$key] = $this->decode_message($value);
 			}
@@ -1917,15 +1824,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 				// struct
 				$rs .= "<struct>\n";
 				reset($val);
-<<<<<<< HEAD
-				while (list($key2, $val2) = each($val))
-=======
-<<<<<<< HEAD
-				while (list($key2, $val2) = each($val))
-=======
 				foreach ($val as $key2 => &$val2)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 				{
 					$rs .= "<member>\n<name>{$key2}</name>\n".$this->serializeval($val2)."</member>\n";
 				}
@@ -1986,23 +1885,9 @@ class XML_RPC_Values extends CI_Xmlrpc
 	 */
 	public function serializeval($o)
 	{
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
-		$ar = $o->me;
-		reset($ar);
-
-		list($typ, $val) = each($ar);
-		return "<value>\n".$this->serializedata($typ, $val)."</value>\n";
-<<<<<<< HEAD
-=======
-=======
 		$array = $o->me;
-		list($value, $type) = array(reset($array), key($array));
+		list($value, $type) = array(reset($ar), key($array));
 		return "<value>\n".$this->serializedata($type, $value)."</value>\n";
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -2014,17 +1899,7 @@ class XML_RPC_Values extends CI_Xmlrpc
 	 */
 	public function scalarval()
 	{
-<<<<<<< HEAD
-		reset($this->me);
-		return current($this->me);
-=======
-<<<<<<< HEAD
-		reset($this->me);
-		return current($this->me);
-=======
 		return reset($this->me);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------

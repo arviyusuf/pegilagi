@@ -23,17 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
-$config['base_url'] = 'http://localhost/pegilagi/
-';
-=======
-<<<<<<< HEAD
-$config['base_url'] = 'http://localhost/pegilagi/
-';
-=======
-$config['base_url'] = 'http://localhost/travel/';
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
+$config['base_url'] = 'http://localhost/pegilagi/';
 
 /*
 |--------------------------------------------------------------------------
@@ -45,15 +35,7 @@ $config['base_url'] = 'http://localhost/travel/';
 | variable so that it is blank.
 |
 */
-<<<<<<< HEAD
-$config['index_page'] = 'index.php';
-=======
-<<<<<<< HEAD
-$config['index_page'] = 'index.php';
-=======
 $config['index_page'] = '';
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 
 /*
 |--------------------------------------------------------------------------
@@ -342,7 +324,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'bocahstematelletametshacob';
 
 /*
 |--------------------------------------------------------------------------

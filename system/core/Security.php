@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -370,21 +354,9 @@ class CI_Security {
 		// Is the string an array?
 		if (is_array($str))
 		{
-<<<<<<< HEAD
-			while (list($key) = each($str))
-			{
-				$str[$key] = $this->xss_clean($str[$key]);
-=======
-<<<<<<< HEAD
-			while (list($key) = each($str))
-			{
-				$str[$key] = $this->xss_clean($str[$key]);
-=======
 			foreach ($str as $key => &$value)
 			{
 				$str[$key] = $this->xss_clean($value);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			}
 
 			return $str;
@@ -897,15 +869,7 @@ class CI_Security {
 			// Each iteration filters a single attribute
 			do
 			{
-<<<<<<< HEAD
-				// Strip any non-alpha characters that may preceed an attribute.
-=======
-<<<<<<< HEAD
-				// Strip any non-alpha characters that may preceed an attribute.
-=======
 				// Strip any non-alpha characters that may precede an attribute.
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 				// Browsers often parse these incorrectly and that has been a
 				// of numerous XSS issues we've had.
 				$matches['attributes'] = preg_replace('#^[^a-z]+#i', '', $matches['attributes']);

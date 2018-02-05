@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -231,10 +215,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	protected $qb_cache_join			= array();
 
 	/**
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 	 * QB Cache aliased tables list
 	 *
 	 * @var	array
@@ -242,8 +222,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	protected $qb_cache_aliased_tables			= array();
 
 	/**
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	 * QB Cache WHERE data
 	 *
 	 * @var	array
@@ -1425,10 +1403,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 		// ORDER BY usage is often problematic here (most notably
 		// on Microsoft SQL Server) and ultimately unnecessary
 		// for selecting COUNT(*) ...
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		if ( ! empty($this->qb_orderby))
 		{
 			$orderby = $this->qb_orderby;
@@ -1436,16 +1410,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 		}
 
 		$result = ($this->qb_distinct === TRUE OR ! empty($this->qb_groupby) OR ! empty($this->qb_cache_groupby))
-<<<<<<< HEAD
-=======
-=======
-		$qb_orderby       = $this->qb_orderby;
-		$qb_cache_orderby = $this->qb_cache_orderby;
-		$this->qb_orderby = $this->qb_cache_orderby = array();
-
-		$result = ($this->qb_distinct === TRUE OR ! empty($this->qb_groupby) OR ! empty($this->qb_cache_groupby) OR $this->qb_limit OR $this->qb_offset)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			? $this->query($this->_count_string.$this->protect_identifiers('numrows')."\nFROM (\n".$this->_compile_select()."\n) CI_count_all_results")
 			: $this->query($this->_compile_select($this->_count_string.$this->protect_identifiers('numrows')));
 
@@ -1453,23 +1417,10 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 		{
 			$this->_reset_select();
 		}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		// If we've previously reset the qb_orderby values, get them back
 		elseif ( ! isset($this->qb_orderby))
 		{
 			$this->qb_orderby = $orderby;
-<<<<<<< HEAD
-=======
-=======
-		else
-		{
-			$this->qb_orderby       = $qb_orderby;
-			$this->qb_cache_orderby = $qb_cache_orderby;
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		}
 
 		if ($result->num_rows() === 0)
@@ -2337,16 +2288,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 			$table = trim(strrchr($table, ' '));
 
 			// Store the alias, if it doesn't already exist
-<<<<<<< HEAD
-			if ( ! in_array($table, $this->qb_aliased_tables))
-			{
-				$this->qb_aliased_tables[] = $table;
-=======
-<<<<<<< HEAD
-			if ( ! in_array($table, $this->qb_aliased_tables))
-			{
-				$this->qb_aliased_tables[] = $table;
-=======
 			if ( ! in_array($table, $this->qb_aliased_tables, TRUE))
 			{
 				$this->qb_aliased_tables[] = $table;
@@ -2355,8 +2296,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 					$this->qb_cache_aliased_tables[] = $table;
 					$this->qb_cache_exists[] = 'aliased_tables';
 				}
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 			}
 		}
 	}
@@ -2514,15 +2453,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * Escapes identifiers in GROUP BY statements at execution time.
 	 *
-<<<<<<< HEAD
-	 * Required so that aliases are tracked properly, regardless of wether
-=======
-<<<<<<< HEAD
-	 * Required so that aliases are tracked properly, regardless of wether
-=======
 	 * Required so that aliases are tracked properly, regardless of whether
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	 * group_by() is called prior to from(), join() and dbprefix is added
 	 * only if needed.
 	 *
@@ -2558,15 +2489,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 *
 	 * Escapes identifiers in ORDER BY statements at execution time.
 	 *
-<<<<<<< HEAD
-	 * Required so that aliases are tracked properly, regardless of wether
-=======
-<<<<<<< HEAD
-	 * Required so that aliases are tracked properly, regardless of wether
-=======
 	 * Required so that aliases are tracked properly, regardless of whether
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	 * order_by() is called prior to from(), join() and dbprefix is added
 	 * only if needed.
 	 *
@@ -2574,33 +2497,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 */
 	protected function _compile_order_by()
 	{
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
-		if (is_array($this->qb_orderby) && count($this->qb_orderby) > 0)
-		{
-			for ($i = 0, $c = count($this->qb_orderby); $i < $c; $i++)
-			{
-				if ($this->qb_orderby[$i]['escape'] !== FALSE && ! $this->_is_literal($this->qb_orderby[$i]['field']))
-				{
-					$this->qb_orderby[$i]['field'] = $this->protect_identifiers($this->qb_orderby[$i]['field']);
-				}
-
-				$this->qb_orderby[$i] = $this->qb_orderby[$i]['field'].$this->qb_orderby[$i]['direction'];
-			}
-
-			return $this->qb_orderby = "\nORDER BY ".implode(', ', $this->qb_orderby);
-		}
-		elseif (is_string($this->qb_orderby))
-		{
-			return $this->qb_orderby;
-		}
-
-		return '';
-<<<<<<< HEAD
-=======
-=======
 		if (empty($this->qb_orderby))
 		{
 			return '';
@@ -2622,8 +2518,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 		}
 
 		return "\nORDER BY ".implode(', ', $this->qb_orderby);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -2744,16 +2638,8 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 			'qb_cache_orderby'		=> array(),
 			'qb_cache_set'			=> array(),
 			'qb_cache_exists'		=> array(),
-<<<<<<< HEAD
-			'qb_cache_no_escape'	=> array()
-=======
-<<<<<<< HEAD
-			'qb_cache_no_escape'	=> array()
-=======
 			'qb_cache_no_escape'	=> array(),
 			'qb_cache_aliased_tables'	=> array()
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		));
 
 		return $this;
@@ -2804,22 +2690,6 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 				$this->qb_no_escape = $qb_no_escape;
 			}
 		}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
-
-		// If we are "protecting identifiers" we need to examine the "from"
-		// portion of the query to determine if there are any aliases
-		if ($this->_protect_identifiers === TRUE && count($this->qb_cache_from) > 0)
-		{
-			$this->_track_aliases($this->qb_from);
-		}
-<<<<<<< HEAD
-=======
-=======
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------

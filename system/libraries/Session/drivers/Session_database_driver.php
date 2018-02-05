@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 3.0.0
@@ -224,23 +208,8 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 		// Prevent previous QB calls from messing with our queries
 		$this->_db->reset_query();
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
-		if ($this->_lock === FALSE)
-		{
-			return $this->_fail();
-		}
-		// Was the ID regenerated?
-		elseif ($session_id !== $this->_session_id)
-<<<<<<< HEAD
-=======
-=======
 		// Was the ID regenerated?
 		if (isset($this->_session_id) && $session_id !== $this->_session_id)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		{
 			if ( ! $this->_release_lock() OR ! $this->_get_lock($session_id))
 			{
@@ -250,16 +219,10 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 			$this->_row_exists = FALSE;
 			$this->_session_id = $session_id;
 		}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 		elseif ($this->_lock === FALSE)
 		{
 			return $this->_fail();
 		}
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 
 		if ($this->_row_exists === FALSE)
 		{

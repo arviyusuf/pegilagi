@@ -6,15 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
-<<<<<<< HEAD
  * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
-<<<<<<< HEAD
- * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
-=======
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,15 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
-<<<<<<< HEAD
  * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
-<<<<<<< HEAD
- * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
-=======
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
  * @since	Version 1.0.0
@@ -418,10 +402,6 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 			{
 				return get_instance()->{$method_parts[1]}($m);
 			}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 			else
 			{
 				return $this->object->{$method_parts[1]}($m);
@@ -431,16 +411,6 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 		{
 			return call_user_func($this->methods[$methName]['function'], $m);
 		}
-<<<<<<< HEAD
-=======
-=======
-
-			return $this->object->{$method_parts[1]}($m);
-		}
-
-		return call_user_func($this->methods[$methName]['function'], $m);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -529,21 +499,10 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 
 			return new XML_RPC_Response(new XML_RPC_Values($docstring, 'string'));
 		}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> Sprint 1 1,2,3
 		else
 		{
 			return new XML_RPC_Response(0, $this->xmlrpcerr['introspect_unknown'], $this->xmlrpcstr['introspect_unknown']);
 		}
-<<<<<<< HEAD
-=======
-=======
-
-		return new XML_RPC_Response(0, $this->xmlrpcerr['introspect_unknown'], $this->xmlrpcstr['introspect_unknown']);
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 	}
 
 	// --------------------------------------------------------------------
@@ -625,15 +584,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 			return $this->multicall_error('nomethod');
 		}
 
-<<<<<<< HEAD
-		list($scalar_type, $scalar_value) = each($methName->me);
-=======
-<<<<<<< HEAD
-		list($scalar_type, $scalar_value) = each($methName->me);
-=======
 		list($scalar_value, $scalar_type) = array(reset($methName->me), key($methName->me));
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 		$scalar_type = $scalar_type === $this->xmlrpcI4 ? $this->xmlrpcInt : $scalar_type;
 
 		if ($methName->kindOf() !== 'scalar' OR $scalar_type !== 'string')
@@ -653,15 +604,7 @@ class CI_Xmlrpcs extends CI_Xmlrpc {
 			return $this->multicall_error('notarray');
 		}
 
-<<<<<<< HEAD
-		list($a, $b) = each($params->me);
-=======
-<<<<<<< HEAD
-		list($a, $b) = each($params->me);
-=======
 		list($b, $a) = array(reset($params->me), key($params->me));
->>>>>>> sprint1 bikin crud 26/01/2018
->>>>>>> Sprint 1 1,2,3
 
 		$msg = new XML_RPC_Message($scalar_value);
 		for ($i = 0, $numParams = count($b); $i < $numParams; $i++)

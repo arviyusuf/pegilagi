@@ -59,13 +59,35 @@ class Crud extends CI_Controller{
 	redirect('crud/index');
 	}
 
-	function tambah_reserv(){
+	function tambah_r(){
 		$this->load->view('v_inputr');
 	}
 
 	function indexr(){
-		$data['reservation'] = $this->m_data->tampil_data()->result();
-		$this->load->view('v_reserv',$data);
+		$data['rute'] = $this->m_data->tampilreserv();
+		$this->load->view('v_rute',$data);
+	}
+
+	function tambah_aksi_r(){
+		$departat = $this->input->post('depart_at');
+		$arrivalat = $this->input->post('arrival_at');
+		$ruteform = $this->input->post('rute_form');
+		$ruteto = $this->input->post('rute_to');
+		$transitplace = $this ->input ->post('transit_place');
+		$price = $this->input->post('price');
+		$transportid = $this->input->post('transportation_id');
+ 
+		$data = array(
+			'departat' => $depart_at,
+			'arrivalat' => $arrival_at,
+			'ruteform' => $rute_form,
+			'ruteto' => $rute_to,
+			'transitplace' => $transit_place,
+			'price' => $price,
+			'transportationid' => $transport_id
+			);
+		$this->m_data->input_data($data,'user');
+		redirect('crud/indexr');
 	}
 
 
